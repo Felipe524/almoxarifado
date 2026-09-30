@@ -1,0 +1,28 @@
+erDiagram
+    PRODUTOS ||--o{ ENTRADAS : possui
+    PRODUTOS ||--o{ SAIDAS : possui
+
+    PRODUTOS {
+        int id_produto PK
+        varchar nome
+        varchar categoria
+        varchar unidade_medida
+        decimal quantidade
+        decimal valor_unitario
+    }
+
+    ENTRADAS {
+        int id_entrada PK
+        int id_produto FK
+        decimal quantidade
+        date data_inicial
+        decimal valor_unitario
+    }
+
+    SAIDAS {
+        int id_saida PK
+        int id_produto FK
+        decimal quantidade
+        date data_final
+        decimal valor_unitario
+    }
